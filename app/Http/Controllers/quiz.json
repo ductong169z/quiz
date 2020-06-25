@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "chemistryonline-71e1a",
+  "private_key_id": "0c5e303c84c9f9f621aa6d87bd749e9f8dba1e15",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDlbborfeldnwBK\nFPEBwYtL6vbdcAuhwh+LU4Q0Me2vegHpNOWHZIUxpLpSqqAjkcbrCiuAXTdjt/vE\nWnU03OnbmByI4DyvXBCn+T8A31Hbe4O4A75k0or0rRYKyuz/8uKocn0whehH9zbF\nvDC/fKM39MEmHmPpE4iuicotbbs/SSy9ZnPPn68w3hXXfdgdkdFou2XAc3hQivT0\nMGpvp8HxoOEh2S49KfasCQUnSXgyHVZeZg8Jk13zxMmedTA63Vn2Zz8A1Ph6cIcq\nD0vyQfcrisJ4xI3S5ASfLw1qWGIGeBVfstd6l9bUPDEJ9KlbIaS2urt3nTsH7omC\nmctXl0/FAgMBAAECggEAVdDMtY7jtr6OC6e4nBkKYuuwyhQqbadgSCuFhEZ2qs++\nnj3IavO49GAyx1AGFTfmSS0lJ172pGiBlijltU+6c4Z6ieIiIM+VdVb/73IYurmB\nA9f2o9yy2CFT4NaVfokZqbslQ3ya7Sw1gxHIxB85J+l3Q6xTX6+MTQjCJGrqgplF\nY5c47WBPaCHDQae91plQDGsyuxLDy1Dvqq/X9acl56prK278/zYGoOM7BFWSH5S7\nOs19qBcFo7Y9cgR08DQH/oOQ/RI9PClDWP1blRcyar6tk/fVcaCae/AbkOUOVkQV\n+n5rakcWR1K/Wxk9mzWMyxHKotggeExKWCw856YZAwKBgQD7fQuQTpqDULnFxTSW\nrSAWRjb0RFQxIP1sj3h1f+iIvW6gPQwuyUoiezKfmef71gpzpKdTY2GX8LOIcNfl\n4xdJna9dWVflKKjzFiTK8017RG9NVkIJTm1BWjgtHgXBwk924vizLwFccUdnAAp0\nRxkZ7ek8IOvjksg9lj7FBqPkdwKBgQDpi19uadwgZihxub+ehCIlmItK4O5A9J02\npdZS+6avvd2vm/EkgMwufoavPoSTUUg/Te1IuymdbASR1XAlEb84st5pZinwYKFA\nb3Q3y2+H/cyk9pd+aJcoD86wyriXXYFTlmsjxWMaHzCZ1ZvljGPQ3iB6Nah3gjdx\nX4BvzJfoowKBgGODlqjSwceGkQxWPboF5bWKsUI1K4+JO17S4tqz84LwWq8jmQeG\ndURxtZV8JFT93ILoO6H+qGakQ5aQ+I2qL9PchsEMkoBGd5xBPevlHNrTOKvEnzrp\ngsgieCo6QBLs3d7wb3MP/Zzj4lo6pOhgHempv+ogKNeThJMCOfJi70V/AoGBAIHY\nWF2WA6oLwk7AfDYQtr96WW9vMWfx2Hqqp0eJ3Hn3MQrSw7aM2Xi8JfvG4YTaezWf\nCN8YGCILDVtbdLdXb56BbEDjaUvZHa4qiU4AEGlmhWHuK/o/AlNmvn7ypsCZXy7v\nAXBo7Rl339iXt85fSJu29A2eSaTwRA0HkOwXrxnLAoGAOmOiKlqAyeLAoyCTFqe2\njsYqAz/XYlEx3b0LBk+vbzLy5FGj1RT8KUIn4tyOap2bbGpB4ImL/6HMQ/ROzn/B\n6PSB3tCDRCVbawSYVtlWfS3+XuwABalAgZvM1JiP6QXTuxUyq4+3KwFCNExKbqUV\nNMscCudvT8j3TTKxCjIMBMI=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-f1e8k@chemistryonline-71e1a.iam.gserviceaccount.com",
+  "client_id": "109777706821504799289",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-f1e8k%40chemistryonline-71e1a.iam.gserviceaccount.com"
+}

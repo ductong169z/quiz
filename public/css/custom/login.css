@@ -1,0 +1,52 @@
+.box-login {
+    width: 100%;
+    /*padding: 40px;*/
+    /*position: absolute;*/
+    /*top: 50%;*/
+    /*left: 50%;*/
+    /*transform: translate(-50%,-50%);*/
+    /*background: #191919;*/
+    text-align: center;
+}
+
+.box-login input[name="email"], .box-login input[name="password"], .box-login input[name="password_confirmed"] {
+    /*border: 0;*/
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #CD2626;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: gray !important;
+    border-radius: 24px;
+    transition: 0.25s;
+    font-size: 16px;
+}
+
+.box-login input[name="email"]:focus, .box-login input[name="password"]:focus, .box-login input[name="password_confirmed"]:focus {
+    width: 280px;
+    border-color: #CD2626;
+}
+
+.box-login button[type="submit"] {
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #CD2626;
+    padding: 14px 40px;
+    width: 200px;
+    outline: none;
+    color: #CD2626;
+    border-radius: 24px;
+    transition: 0.25s;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.box-login button[type="submit"]:hover {
+    background: #CD2626;
+    color: white;
+}

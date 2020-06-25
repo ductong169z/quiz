@@ -1,0 +1,45 @@
+.bg-nav{
+    background-color: #CD2626 !important;
+}
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown>.dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
+
+.search-text:hover{
+    width: 250px;
+}
+
+.search-text{
+    border: none;
+    background: white;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: #0d3625;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    text-align: center;
+}
+
+.search-btn{
+    color: white;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #0d3625;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
