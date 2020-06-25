@@ -46,6 +46,7 @@
             -moz-transform: scale(1.1);
             -o-transform: scale(1.1)
         }
+
         label.btn:hover {
             text-shadow: 0 3px 2px rgba(0, 0, 0, 0.4);
             -webkit-transform: scale(1.1);
@@ -479,7 +480,8 @@
         @yield('content')
         <div class="modal-content">
             <div class="modal-header">
-                <h3><span style="color: blue">Câu hỏi môn : {{$question['mon']}}</span> <p>{{$question['question']}}</p></h3>
+                <h3><span style="color: blue">Câu hỏi môn : {{$question['mon']}}</span>
+                    <p>{{$question['question']}}</p></h3>
             </div>
             <div class="modal-body">
                 <div class="col-xs-3 col-xs-offset-5">
@@ -497,17 +499,17 @@
                 {!! $question['answer'] !!}
                 <div class="quiz" id="quiz" data-toggle="buttons">
                     @foreach($arr as $ques)
-                        <label class="element-animation1 btn btn-lg btn-primary btn-block"><span class="btn-label"><i
-                                        class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio"
-                                                                                                     id="a1"
-                                                                                                     name="q_answer"
-                                                                                                     value="{!! $ques !!}"><span>{!! $ques !!}</span>
+                        <label class="element-animation1 btn btn-lg btn-primary btn-block" onclick="isCorrect(this)"><span class="btn-label"><i
+                                    class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio"
+                                                                                                 id="a1"
+                                                                                                 name="q_answer"
+                                                                                                 value="{!! $ques !!}"><span>{!! $ques !!}</span>
                         </label>
                     @endforeach
                 </div>
             </div>
             <div class="modal-footer text-muted">
-<a class="btn btn-success" href="#" onclick="reload()">Câu tiếp theo</a>            </div>
+                <a class="btn btn-success" href="#" onclick="reload()">Câu tiếp theo</a></div>
         </div>
 
     </aside>
@@ -530,9 +532,32 @@
 <!-- AdminLTE App -->
 <script src="{{asset('js/adminlte.js')}}"></script>
 <script>
-    function reload(){
+    function reload() {
         location.reload();
     }
+    function isCorrect(ele) {
+        var choice = $(ele).find('input:radio').val();
+
+        $('#loadbar').show();
+        // $('#quiz input').on('change', function() {
+        //    $('input[name=q_answer]:checked', '#quiz').css({"background": "orange"});
+        // });
+        $('#quiz').fadeOut();
+        setTimeout(function () {
+            $("#answer").html($(ele).checking(choice));
+            $('#quiz').show();
+            if ($(ele).checking(choice)) {
+                $(ele).css({"background": "green"});
+            } else {
+                $(ele).css({"background": "red"});
+
+            }
+            $('#loadbar').fadeOut();
+
+            /* something else */
+        }, 1500);
+    };
+
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
     })
@@ -545,28 +570,29 @@
             loading.hide();
         });
 
-        $("label.btn").on('click', function (event) {
-            var choice = $(this).find('input:radio').val();
 
-            $('#loadbar').show();
-            // $('#quiz input').on('change', function() {
-            //    $('input[name=q_answer]:checked', '#quiz').css({"background": "orange"});
-            // });
-            $('#quiz').fadeOut();
-            setTimeout(function () {
-                $("#answer").html($(this).checking(choice));
-                $('#quiz').show();
-                if ($(this).checking(choice)) {
-                    $(event.target).css({"background": "green"});
-                } else {
-                    $(event.target).css({"background": "red"});
-
-                }
-                $('#loadbar').fadeOut();
-
-                /* something else */
-            }, 1500);
-        });
+        // $("label.btn").on('click', function (event) {
+        //     var choice = $(this).find('input:radio').val();
+        //
+        //     $('#loadbar').show();
+        //     // $('#quiz input').on('change', function() {
+        //     //    $('input[name=q_answer]:checked', '#quiz').css({"background": "orange"});
+        //     // });
+        //     $('#quiz').fadeOut();
+        //     setTimeout(function () {
+        //         $("#answer").html($(this).checking(choice));
+        //         $('#quiz').show();
+        //         if ($(this).checking(choice)) {
+        //             $(event.target).css({"background": "green"});
+        //         } else {
+        //             $(event.target).css({"background": "red"});
+        //
+        //         }
+        //         $('#loadbar').fadeOut();
+        //
+        //         /* something else */
+        //     }, 1500);
+        // });
 
         var ans = "{!! $question['answer'] !!}";
 
