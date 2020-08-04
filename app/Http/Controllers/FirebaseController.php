@@ -36,13 +36,8 @@ class FirebaseController extends Controller
             ->orderByKey()
             ->getSnapshot();
         //
-        $check = true;
-        do {
+        $check = false;
             $question = collect($db->getValue())->shuffle()[0];
-            if ($question['mon'] == "Hóa Học")
-                $check = false;
-        } while ($check);
-
         $arr[] = $question['answerA'];
         $arr[] = $question['answerB'];
         $arr[] = $question['answerC'];

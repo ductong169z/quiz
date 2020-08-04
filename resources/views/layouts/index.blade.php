@@ -413,9 +413,10 @@
         <!-- Logo -->
         <a href="#" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>QO</b></span>
+
+            <span class="logo-mini"><img src="{{asset('images/logo.png')}}" width="50" height="50"></span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><i class="fa fa-book"></i> Quiz Online</span>
+            <span class="logo-lg"><img src="{{asset('images/logo.png')}}" width="50" height="50"> Quiz Online</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">
@@ -433,38 +434,33 @@
                                  alt="User Image">
                             <span class="hidden-xs">Hello, NguyenDucTong</span>
                         </a>
-                        {{--                        <ul class="dropdown-menu">--}}
-                        {{--                            <!-- User image -->--}}
-                        {{--                            <li class="user-header" style="height: auto;">--}}
-                        {{--                                <img src="{{asset('images/admin_stuffs/new-user.png')}}" class="img-circle" alt="User Image">--}}
-                        {{--                                <p>--}}
-                        {{--                                    --}}{{--{{\Auth::user()->first_name}} {{\Auth::user()->last_name}}--}}
-                        {{--                                    --}}{{--<small>Ngày sinh: {{\Carbon\Carbon::createFromFormat('Y-m-d', \Auth::user()->dob)->format('d-m-Y')}}</small>--}}
-                        {{--                                    --}}{{--<small>SĐT: {{\Auth::user()->phone}}</small>--}}
-                        {{--                                    --}}{{--<small>Email: {{\Auth::user()->email}}</small>--}}
-                        {{--                                    --}}{{--<small>Tham gia vào {{\Auth::user()->created_at->format('d/m/Y')}}</small>--}}
-                        {{--                                </p>--}}
-                        {{--                            </li>--}}
-                        {{--                            <!-- Menu Body -->--}}
-                        {{--                            <li class="user-body" style="height: fit-content;">--}}
-                        {{--                                <div class="row">--}}
-                        {{--                                    <div class="col-12 text-center p-1">--}}
-                        {{--                                        <a href="#" class="fix-info"><i class="fa fa-wrench"></i> Chỉnh sửa thông tin</a>--}}
-                        {{--                                    </div>--}}
-                        {{--                                </div>--}}
-                        {{--                                <!-- /.row -->--}}
-                        {{--                            </li>--}}
-                        {{--                            <!-- Menu Footer-->--}}
-                        {{--                            <li class="user-footer">--}}
-                        {{--                                <a href="#" class="btn btn-default btn-block"--}}
-                        {{--                                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">--}}
-                        {{--                                    Đăng xuất--}}
-                        {{--                                </a>--}}
-                        {{--                                <form id="logout-form" action="#" method="POST" style="display: none;">--}}
-                        {{--                                    {{ csrf_field() }}--}}
-                        {{--                                </form>--}}
-                        {{--                            </li>--}}
-                        {{--                        </ul>--}}
+                                                <ul class="dropdown-menu">
+                                                    <!-- User image -->
+                                                    <li class="user-header" style="height: auto;">
+                                                        <img src="{{asset('images/admin_stuffs/new-user.png')}}" class="img-circle" alt="User Image">
+                                                        <p>
+
+                                                        </p>
+                                                    </li>
+                                                    <!-- Menu Body -->
+                                                    <li class="user-body" style="height: fit-content;">
+                                                        <div class="row">
+                                                            <div class="col-12 text-center p-1">
+                                                                <a href="#" class="fix-info"><i class="fa fa-wrench"></i> Chỉnh sửa thông tin</a>
+                                                            </div>
+                                                        </div>
+                                                        <!-- /.row -->
+                                                    </li>
+                                                    <!-- Menu Footer-->
+                                                    <li class="user-footer">
+                                                        <a href="#" class="btn btn-default btn-block"
+                                                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                            Đăng xuất
+                                                        </a>
+                                                        <form id="logout-form" action="#" method="POST" style="display: none;">
+                                                        </form>
+                                                    </li>
+                                                </ul>
                     </li>
                 </ul>
             </div>
@@ -480,8 +476,8 @@
         @yield('content')
         <div class="modal-content">
             <div class="modal-header">
-                <h3><span style="color: blue">Câu hỏi môn : {{$question['mon']}}</span>
-                    <p>{{$question['question']}}</p></h3>
+                <h3><span style="color: blue;">Câu hỏi môn : {{$question['mon']}}</span><br>
+                    <p style="font-size: 50px">{!! $question['question'] !!}</p></h3>
             </div>
             <div class="modal-body">
                 <div class="col-xs-3 col-xs-offset-5">
@@ -496,15 +492,28 @@
                         <div class="blockG" id="rotateG_08"></div>
                     </div>
                 </div>
-                {!! $question['answer'] !!}
+                {{--                {!! $question['answer'] !!}--}}
                 <div class="quiz" id="quiz" data-toggle="buttons">
                     @foreach($arr as $ques)
-                        <label class="element-animation1 btn btn-lg btn-primary btn-block" onclick="isCorrect(this)"><span class="btn-label"><i
-                                    class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio"
-                                                                                                 id="a1"
-                                                                                                 name="q_answer"
-                                                                                                 value="{!! $ques !!}"><span>{!! $ques !!}</span>
-                        </label>
+                        @if($question['answer']==$ques)
+                            <label class="element-animation1 btn btn-lg btn-primary btn-block"
+                                   onclick="isCorrect(this)" id="lblTrue"><span class="btn-label"><i
+                                        class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio"
+                                                                                                     id="a1"
+                                                                                                     name="q_answer"
+                                                                                                     value="{!! $ques !!}"><span
+                                    style="font-size: 35px">{!! $ques !!}</span>
+                            </label>
+                        @else
+                            <label class="element-animation1 btn btn-lg btn-primary btn-block"
+                                   onclick="isCorrect(this)"><span class="btn-label"><i
+                                        class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio"
+                                                                                                     id="a1"
+                                                                                                     name="q_answer"
+                                                                                                     value="{!! $ques !!}"><span
+                                    style="font-size: 35px">{!! $ques !!}</span>
+                            </label>
+                        @endif
                     @endforeach
                 </div>
             </div>
@@ -535,6 +544,7 @@
     function reload() {
         location.reload();
     }
+
     function isCorrect(ele) {
         var choice = $(ele).find('input:radio').val();
 
@@ -550,6 +560,7 @@
                 $(ele).css({"background": "green"});
             } else {
                 $(ele).css({"background": "red"});
+$("#lblTrue").css({"background": "green"});
 
             }
             $('#loadbar').fadeOut();
